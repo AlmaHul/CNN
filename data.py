@@ -12,7 +12,7 @@ from sklearn.model_selection import train_test_split
 original_dir = "data"  # mappen som innehåller "cats" och "dogs"
 
 # Skapa train/test mappar
-base_dir = "cats_dogs_split"
+base_dir = "data/cats_dogs_split"
 train_dir = os.path.join(base_dir, "train")
 test_dir = os.path.join(base_dir, "test")
 
@@ -120,3 +120,9 @@ plt.title('Loss')
 plt.legend()
 
 plt.show()
+
+from tensorflow.keras.utils import plot_model
+
+# Spara en grafisk bild av modellen
+plot_model(model, to_file="cnn_model_architecture.png", show_shapes=True, show_layer_names=True)
+
